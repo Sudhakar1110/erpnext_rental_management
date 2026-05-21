@@ -1,4 +1,5 @@
-app_name = 'rental_management'
-app_title = 'Rental Management'
-app_publisher = 'OpenAI'
-app_version = '0.0.1'
+app_name = "rental_management"
+app_title = "Rental Management"
+app_publisher = "OpenAI"
+app_description = "A custom application for tracking and managing rentals."
+app_version = "0.0.1"
