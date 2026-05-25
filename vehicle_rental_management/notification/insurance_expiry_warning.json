@@ -1,0 +1,15 @@
+{
+  "doctype": "Notification",
+  "name": "Insurance Expiry Warning",
+  "subject": "Insurance Expiry Warning: {{ doc.license_plate }}",
+  "document_type": "Vehicle",
+  "event": "Days Before",
+  "days_in_advance": 30,
+  "date_changed": "insurance_expiry",
+  "channel": "Email",
+  "enabled": 1,
+  "recipients": [
+    {"role": "Fleet Manager"}
+  ],
+  "message": "<p>This is a reminder that insurance for vehicle <strong>{{ doc.license_plate }}</strong> ({{ doc.make }} {{ doc.model }}) expires on <strong>{{ doc.insurance_expiry }}</strong>.</p><p>Please renew the policy before expiry.</p>"
+}

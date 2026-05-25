@@ -1,0 +1,16 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Pricing Tier",
+  "module": "Vehicle Rental Management",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "tier_name", "fieldtype": "Data", "label": "Tier Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "from_date", "fieldtype": "Date", "label": "From Date", "in_list_view": 1},
+    {"fieldname": "to_date", "fieldtype": "Date", "label": "To Date", "in_list_view": 1},
+    {"fieldname": "daily_rate", "fieldtype": "Currency", "label": "Daily Rate", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "weekly_rate", "fieldtype": "Currency", "label": "Weekly Rate"},
+    {"fieldname": "monthly_rate", "fieldtype": "Currency", "label": "Monthly Rate"},
+    {"fieldname": "minimum_days", "fieldtype": "Int", "label": "Min Days"},
+    {"fieldname": "notes", "fieldtype": "Data", "label": "Notes"}
+  ]
+}

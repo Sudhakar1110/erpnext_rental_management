@@ -1,0 +1,37 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle Maintenance",
+  "module": "Vehicle Rental Management",
+  "autoname": "naming_series:",
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "VMNT-.YYYY.-.#####"},
+    {"fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "maintenance_type", "fieldtype": "Select",
+      "options": "Routine Service\nOil Change\nTyre Replacement\nBrake Service\nEngine Repair\nBodywork\nElectrical\nAC Service\nOther",
+      "reqd": 1, "in_list_view": 1},
+    {"fieldname": "scheduled_date", "fieldtype": "Date", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "completion_date", "fieldtype": "Date"},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "workshop", "fieldtype": "Data", "label": "Workshop / Garage"},
+    {"fieldname": "mechanic_name", "fieldtype": "Data"},
+    {"fieldname": "odometer_at_service", "fieldtype": "Float", "label": "Odometer at Service (km)"},
+    {"fieldname": "next_service_km", "fieldtype": "Float", "label": "Next Service (km)"},
+    {"fieldname": "next_service_date", "fieldtype": "Date"},
+    {"fieldname": "sec_cost", "fieldtype": "Section Break", "label": "Cost"},
+    {"fieldname": "labour_cost", "fieldtype": "Currency"},
+    {"fieldname": "parts_cost", "fieldtype": "Currency"},
+    {"fieldname": "total_cost", "fieldtype": "Currency", "read_only": 1},
+    {"fieldname": "sec_notes", "fieldtype": "Section Break"},
+    {"fieldname": "work_description", "fieldtype": "Text Editor"},
+    {"fieldname": "parts_replaced", "fieldtype": "Small Text"},
+    {"fieldname": "attachments", "fieldtype": "Attach"},
+    {"fieldname": "status", "fieldtype": "Select",
+      "options": "Scheduled\nIn Progress\nCompleted\nCancelled",
+      "default": "Scheduled", "in_list_view": 1}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Mechanic", "read": 1, "write": 1, "create": 1}
+  ]
+}

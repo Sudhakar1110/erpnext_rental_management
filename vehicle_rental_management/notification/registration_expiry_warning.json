@@ -1,0 +1,15 @@
+{
+  "doctype": "Notification",
+  "name": "Registration Expiry Warning",
+  "subject": "Registration Expiry Warning: {{ doc.license_plate }}",
+  "document_type": "Vehicle",
+  "event": "Days Before",
+  "days_in_advance": 30,
+  "date_changed": "registration_expiry",
+  "channel": "Email",
+  "enabled": 1,
+  "recipients": [
+    {"role": "Fleet Manager"}
+  ],
+  "message": "<p>Registration for vehicle <strong>{{ doc.license_plate }}</strong> expires on <strong>{{ doc.registration_expiry }}</strong>. Please renew before expiry.</p>"
+}

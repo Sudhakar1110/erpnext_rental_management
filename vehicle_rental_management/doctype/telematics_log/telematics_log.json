@@ -1,0 +1,25 @@
+{
+  "doctype": "DocType",
+  "name": "Telematics Log",
+  "module": "Vehicle Rental Management",
+  "autoname": "naming_series:",
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "TLM-.YYYY.-.#####"},
+    {"fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "timestamp", "fieldtype": "Datetime", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "latitude", "fieldtype": "Float", "precision": "6"},
+    {"fieldname": "longitude", "fieldtype": "Float", "precision": "6"},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "speed", "fieldtype": "Float", "label": "Speed (km/h)"},
+    {"fieldname": "odometer", "fieldtype": "Float", "label": "Odometer (km)"},
+    {"fieldname": "fuel_level", "fieldtype": "Float", "label": "Fuel Level (%)"},
+    {"fieldname": "engine_status", "fieldtype": "Select", "options": "On\nOff\nIdle"},
+    {"fieldname": "event_type", "fieldtype": "Select",
+      "options": "Position Update\nIgnition On\nIgnition Off\nHarsh Braking\nHarsh Acceleration\nSpeeding\nGeofence Entry\nGeofence Exit"},
+    {"fieldname": "notes", "fieldtype": "Data"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1}
+  ]
+}

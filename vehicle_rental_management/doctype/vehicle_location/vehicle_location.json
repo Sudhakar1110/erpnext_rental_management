@@ -1,0 +1,25 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle Location",
+  "module": "Vehicle Rental Management",
+  "autoname": "field:location_name",
+  "fields": [
+    {"fieldname": "location_name", "fieldtype": "Data", "label": "Location Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "address_line1", "fieldtype": "Data", "label": "Address Line 1"},
+    {"fieldname": "address_line2", "fieldtype": "Data", "label": "Address Line 2"},
+    {"fieldname": "city", "fieldtype": "Data", "label": "City", "in_list_view": 1},
+    {"fieldname": "state", "fieldtype": "Data", "label": "State"},
+    {"fieldname": "country", "fieldtype": "Link", "options": "Country", "label": "Country"},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "phone", "fieldtype": "Phone", "label": "Phone"},
+    {"fieldname": "email", "fieldtype": "Data", "options": "Email", "label": "Email"},
+    {"fieldname": "latitude", "fieldtype": "Float", "label": "Latitude"},
+    {"fieldname": "longitude", "fieldtype": "Float", "label": "Longitude"},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"},
+    {"fieldname": "opening_hours", "fieldtype": "Small Text", "label": "Opening Hours"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1}
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Invoice",
+  "module": "Vehicle Rental Management",
+  "autoname": "naming_series:",
+  "is_submittable": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "RINV-.YYYY.-.#####"},
+    {"fieldname": "booking", "fieldtype": "Link", "options": "Rental Booking", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "customer", "fieldtype": "Link", "options": "Customer", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "invoice_date", "fieldtype": "Date", "default": "Today"},
+    {"fieldname": "due_date", "fieldtype": "Date"},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "sales_invoice", "fieldtype": "Link", "options": "Sales Invoice"},
+    {"fieldname": "rental_days", "fieldtype": "Int"},
+    {"fieldname": "base_amount", "fieldtype": "Currency"},
+    {"fieldname": "extras_total", "fieldtype": "Currency"},
+    {"fieldname": "discount_amount", "fieldtype": "Currency"},
+    {"fieldname": "tax_amount", "fieldtype": "Currency"},
+    {"fieldname": "grand_total", "fieldtype": "Currency", "in_list_view": 1},
+    {"fieldname": "deposit_amount", "fieldtype": "Currency"},
+    {"fieldname": "deposit_returned", "fieldtype": "Check"},
+    {"fieldname": "late_fee", "fieldtype": "Currency"},
+    {"fieldname": "excess_km_fee", "fieldtype": "Currency"},
+    {"fieldname": "damage_charges", "fieldtype": "Currency"},
+    {"fieldname": "payment_status", "fieldtype": "Select",
+      "options": "Unpaid\nPartially Paid\nPaid\nOverdue",
+      "default": "Unpaid", "in_list_view": 1},
+    {"fieldname": "notes", "fieldtype": "Small Text"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1, "write": 1, "create": 1}
+  ]
+}

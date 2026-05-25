@@ -1,0 +1,8 @@
+{
+  "doctype": "Print Format",
+  "name": "Rental Agreement Print",
+  "doc_type": "Rental Agreement",
+  "module": "Vehicle Rental Management",
+  "standard": "Yes",
+  "html": "<h2>Rental Agreement</h2><p>Agreement No: {{ doc.name }}</p><p>Customer: {{ doc.customer }}</p><p>Vehicle: {{ doc.vehicle }}</p><p>From: {{ doc.pickup_date }} To: {{ doc.return_date }}</p><p>Total: {{ doc.grand_total }}</p><hr><p>{{ doc.terms_and_conditions }}</p><br><br><p>Customer Signature: ___________________</p><p>Agent Signature: ___________________</p>"
+}

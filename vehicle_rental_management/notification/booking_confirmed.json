@@ -1,0 +1,15 @@
+{
+  "doctype": "Notification",
+  "name": "Booking Confirmed",
+  "subject": "Booking Confirmed: {{ doc.name }}",
+  "document_type": "Rental Booking",
+  "event": "Change in Status",
+  "value_changed": "status",
+  "channel": "Email",
+  "enabled": 1,
+  "condition": "doc.status == 'Confirmed'",
+  "recipients": [
+    {"receiver_by_document_field": "customer"}
+  ],
+  "message": "<p>Dear Customer,</p><p>Your booking <strong>{{ doc.name }}</strong> has been confirmed.</p><p><strong>Vehicle:</strong> {{ doc.vehicle }}<br><strong>Pickup:</strong> {{ doc.pickup_date }} at {{ doc.pickup_location }}<br><strong>Return:</strong> {{ doc.return_date }} at {{ doc.return_location }}<br><strong>Total:</strong> {{ doc.grand_total }}</p><p>Thank you for choosing us.</p>"
+}

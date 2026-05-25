@@ -1,0 +1,36 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle Damage",
+  "module": "Vehicle Rental Management",
+  "autoname": "naming_series:",
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "VDMG-.YYYY.-.#####"},
+    {"fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "booking", "fieldtype": "Link", "options": "Rental Booking", "in_list_view": 1},
+    {"fieldname": "inspection", "fieldtype": "Link", "options": "Vehicle Inspection"},
+    {"fieldname": "damage_date", "fieldtype": "Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "damage_type", "fieldtype": "Select",
+      "options": "Scratch\nDent\nCrack\nBroken\nStain\nFlood\nTotal Loss\nOther",
+      "reqd": 1, "in_list_view": 1},
+    {"fieldname": "damage_location", "fieldtype": "Select",
+      "options": "Front\nRear\nLeft Side\nRight Side\nRoof\nInterior\nUnderbody\nEngine\nOther"},
+    {"fieldname": "severity", "fieldtype": "Select",
+      "options": "Minor\nModerate\nMajor\nTotal Loss", "in_list_view": 1},
+    {"fieldname": "repair_cost", "fieldtype": "Currency", "label": "Estimated Repair Cost"},
+    {"fieldname": "actual_repair_cost", "fieldtype": "Currency"},
+    {"fieldname": "customer_liable", "fieldtype": "Check", "label": "Customer Liable"},
+    {"fieldname": "charged_to_customer", "fieldtype": "Currency"},
+    {"fieldname": "sec_desc", "fieldtype": "Section Break"},
+    {"fieldname": "description", "fieldtype": "Text Editor"},
+    {"fieldname": "photos", "fieldtype": "Attach", "label": "Damage Photos"},
+    {"fieldname": "status", "fieldtype": "Select",
+      "options": "Reported\nUnder Repair\nRepaired\nWritten Off",
+      "default": "Reported", "in_list_view": 1}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1, "write": 1, "create": 1},
+    {"role": "Mechanic", "read": 1, "write": 1}
+  ]
+}

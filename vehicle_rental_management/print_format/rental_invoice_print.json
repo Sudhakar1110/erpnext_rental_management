@@ -1,0 +1,8 @@
+{
+  "doctype": "Print Format",
+  "name": "Rental Invoice Print",
+  "doc_type": "Rental Invoice",
+  "module": "Vehicle Rental Management",
+  "standard": "Yes",
+  "html": "<h2>Rental Invoice</h2><p>Invoice No: {{ doc.name }}</p><p>Customer: {{ doc.customer }}</p><p>Booking: {{ doc.booking }}</p><p>Rental Days: {{ doc.rental_days }}</p><table border='1' cellpadding='6' width='100%'><tr><th>Description</th><th>Amount</th></tr><tr><td>Base Rental</td><td>{{ doc.base_amount }}</td></tr><tr><td>Extras</td><td>{{ doc.extras_total }}</td></tr><tr><td>Tax</td><td>{{ doc.tax_amount }}</td></tr><tr><td><strong>Grand Total</strong></td><td><strong>{{ doc.grand_total }}</strong></td></tr></table>"
+}

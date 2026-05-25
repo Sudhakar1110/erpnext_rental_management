@@ -1,0 +1,13 @@
+{
+  "doctype": "Dashboard Chart",
+  "name": "Revenue Trend",
+  "chart_name": "Revenue Trend",
+  "chart_type": "Sum",
+  "document_type": "Rental Booking",
+  "based_on": "pickup_date",
+  "value_based_on": "grand_total",
+  "time_interval": "Monthly",
+  "timespan": "Last Year",
+  "filters_json": "[{\"fieldname\": \"status\", \"operator\": \"in\", \"value\": \"Closed,Invoiced\"}]",
+  "module": "Vehicle Rental Management"
+}

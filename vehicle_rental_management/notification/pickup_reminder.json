@@ -1,0 +1,16 @@
+{
+  "doctype": "Notification",
+  "name": "Pickup Reminder",
+  "subject": "Reminder: Your vehicle pickup tomorrow ({{ doc.name }})",
+  "document_type": "Rental Booking",
+  "event": "Days Before",
+  "days_in_advance": 1,
+  "date_changed": "pickup_date",
+  "channel": "Email",
+  "enabled": 1,
+  "condition": "doc.status == 'Confirmed'",
+  "recipients": [
+    {"receiver_by_document_field": "customer"}
+  ],
+  "message": "<p>Hi,</p><p>This is a friendly reminder that you are picking up <strong>{{ doc.vehicle }}</strong> tomorrow.</p><p><strong>Pickup Time:</strong> {{ doc.pickup_date }}<br><strong>Location:</strong> {{ doc.pickup_location }}<br><strong>Booking Reference:</strong> {{ doc.name }}</p><p>Please bring a valid ID and your driving licence.</p>"
+}

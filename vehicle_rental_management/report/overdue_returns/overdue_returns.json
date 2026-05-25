@@ -1,0 +1,9 @@
+{
+  "doctype": "Report",
+  "name": "Overdue Returns",
+  "report_name": "Overdue Returns",
+  "ref_doctype": "Rental Booking",
+  "report_type": "Script Report",
+  "module": "Vehicle Rental Management",
+  "is_standard": "Yes"
+}

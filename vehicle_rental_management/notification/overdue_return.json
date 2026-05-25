@@ -1,0 +1,17 @@
+{
+  "doctype": "Notification",
+  "name": "Overdue Return Alert",
+  "subject": "OVERDUE: Vehicle not returned - {{ doc.name }}",
+  "document_type": "Rental Booking",
+  "event": "Days After",
+  "days_in_advance": 0,
+  "date_changed": "return_date",
+  "channel": "Email",
+  "enabled": 1,
+  "condition": "doc.status == 'Checked Out'",
+  "recipients": [
+    {"receiver_by_document_field": "customer"}
+  ],
+  "send_to_all_assignees": 0,
+  "message": "<p>Dear Customer,</p><p>Your rental of vehicle <strong>{{ doc.vehicle }}</strong> was due for return on <strong>{{ doc.return_date }}</strong>.</p><p>Please return the vehicle immediately to avoid additional late fees.</p><p>Contact us urgently if you need an extension.</p>"
+}

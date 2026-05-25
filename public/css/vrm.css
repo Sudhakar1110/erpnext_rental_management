@@ -1,0 +1,54 @@
+/* Vehicle Rental Management - Custom Styles */
+
+/* Vehicle card status badge */
+.vehicle-status-available { color: #27ae60; font-weight: bold; }
+.vehicle-status-rented { color: #e74c3c; font-weight: bold; }
+.vehicle-status-maintenance { color: #e67e22; font-weight: bold; }
+.vehicle-status-out-of-service { color: #7f8c8d; font-weight: bold; }
+
+/* Portal vehicle cards */
+.vrm-vehicle-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.vrm-vehicle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.vrm-vehicle-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.vrm-daily-rate {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1abc9c;
+}
+.vrm-badge-category {
+    background: #eaf4fb;
+    color: #2980b9;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+}
+
+/* Booking form */
+.vrm-booking-section {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.vrm-total-row {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top: 2px solid #ddd;
+    padding-top: 8px;
+}
+
+/* Dashboard number cards */
+.vrm-card-active { border-left: 4px solid #e74c3c; }
+.vrm-card-available { border-left: 4px solid #27ae60; }
+.vrm-card-overdue { border-left: 4px solid #e67e22; }

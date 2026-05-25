@@ -1,0 +1,23 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Pricing Plan",
+  "module": "Vehicle Rental Management",
+  "autoname": "field:plan_name",
+  "fields": [
+    {"fieldname": "plan_name", "fieldtype": "Data", "label": "Plan Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "category", "fieldtype": "Link", "options": "Vehicle Category", "label": "Category", "in_list_view": 1},
+    {"fieldname": "base_daily_rate", "fieldtype": "Currency", "label": "Base Daily Rate", "reqd": 1},
+    {"fieldname": "base_weekly_rate", "fieldtype": "Currency", "label": "Base Weekly Rate"},
+    {"fieldname": "base_monthly_rate", "fieldtype": "Currency", "label": "Base Monthly Rate"},
+    {"fieldname": "free_km_per_day", "fieldtype": "Float", "label": "Free KM Per Day"},
+    {"fieldname": "excess_km_rate", "fieldtype": "Currency", "label": "Excess KM Rate"},
+    {"fieldname": "late_return_fee_per_hour", "fieldtype": "Currency", "label": "Late Return Fee/Hour"},
+    {"fieldname": "sec_tiers", "fieldtype": "Section Break", "label": "Seasonal / Promotional Tiers"},
+    {"fieldname": "tiers", "fieldtype": "Table", "options": "Rental Pricing Tier", "label": "Pricing Tiers"},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1}
+  ]
+}

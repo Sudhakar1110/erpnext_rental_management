@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Booking Extra",
+  "module": "Vehicle Rental Management",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "extra", "fieldtype": "Link", "options": "Rental Extra", "label": "Extra", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "extra_name", "fieldtype": "Data", "label": "Name", "fetch_from": "extra.extra_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "quantity", "fieldtype": "Int", "label": "Qty", "default": "1", "in_list_view": 1},
+    {"fieldname": "rate", "fieldtype": "Currency", "label": "Rate", "in_list_view": 1},
+    {"fieldname": "charge_type", "fieldtype": "Select", "options": "Per Day\nPer Rental\nOne-Time", "label": "Charge Type"},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "read_only": 1, "in_list_view": 1}
+  ]
+}

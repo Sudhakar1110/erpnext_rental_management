@@ -1,0 +1,12 @@
+{
+  "doctype": "Report",
+  "name": "Upcoming Pickups",
+  "report_name": "Upcoming Pickups",
+  "ref_doctype": "Rental Booking",
+  "report_type": "Script Report",
+  "module": "Vehicle Rental Management",
+  "is_standard": "Yes",
+  "filters": [
+    {"fieldname": "days", "label": "Days Ahead", "fieldtype": "Int", "default": "7"}
+  ]
+}

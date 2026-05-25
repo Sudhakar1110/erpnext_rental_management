@@ -1,0 +1,15 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle Make",
+  "module": "Vehicle Rental Management",
+  "autoname": "field:make_name",
+  "fields": [
+    {"fieldname": "make_name", "fieldtype": "Data", "label": "Make Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "country", "fieldtype": "Data", "label": "Country of Origin"},
+    {"fieldname": "logo", "fieldtype": "Attach Image", "label": "Logo"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1}
+  ]
+}

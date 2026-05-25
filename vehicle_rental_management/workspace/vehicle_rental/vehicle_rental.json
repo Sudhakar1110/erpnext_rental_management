@@ -1,0 +1,65 @@
+{
+  "doctype": "Workspace",
+  "name": "Vehicle Rental",
+  "label": "Vehicle Rental",
+  "module": "Vehicle Rental Management",
+  "icon": "car",
+  "public": 1,
+  "shortcuts": [
+    {"type": "DocType", "link_to": "Vehicle", "label": "Vehicles", "color": "#1abc9c"},
+    {"type": "DocType", "link_to": "Rental Booking", "label": "New Booking", "color": "#3498db"},
+    {"type": "DocType", "link_to": "Rental Agreement", "label": "Agreements", "color": "#9b59b6"},
+    {"type": "DocType", "link_to": "Vehicle Maintenance", "label": "Maintenance", "color": "#e67e22"},
+    {"type": "Report", "link_to": "Fleet Utilization", "label": "Utilization", "color": "#e74c3c"},
+    {"type": "DocType", "link_to": "Rental Settings", "label": "Settings", "color": "#7f8c8d"}
+  ],
+  "links": [
+    {"label": "Fleet Masters", "type": "Card Break"},
+    {"label": "Vehicle", "link_type": "DocType", "link_to": "Vehicle", "type": "Link"},
+    {"label": "Vehicle Category", "link_type": "DocType", "link_to": "Vehicle Category", "type": "Link"},
+    {"label": "Vehicle Make", "link_type": "DocType", "link_to": "Vehicle Make", "type": "Link"},
+    {"label": "Vehicle Model", "link_type": "DocType", "link_to": "Vehicle Model", "type": "Link"},
+    {"label": "Vehicle Location", "link_type": "DocType", "link_to": "Vehicle Location", "type": "Link"},
+    {"label": "Rental Pricing Plan", "link_type": "DocType", "link_to": "Rental Pricing Plan", "type": "Link"},
+    {"label": "Rental Extra", "link_type": "DocType", "link_to": "Rental Extra", "type": "Link"},
+
+    {"label": "Operations", "type": "Card Break"},
+    {"label": "Rental Booking", "link_type": "DocType", "link_to": "Rental Booking", "type": "Link"},
+    {"label": "Rental Agreement", "link_type": "DocType", "link_to": "Rental Agreement", "type": "Link"},
+    {"label": "Vehicle Inspection", "link_type": "DocType", "link_to": "Vehicle Inspection", "type": "Link"},
+    {"label": "Vehicle Damage", "link_type": "DocType", "link_to": "Vehicle Damage", "type": "Link"},
+    {"label": "Rental Invoice", "link_type": "DocType", "link_to": "Rental Invoice", "type": "Link"},
+    {"label": "Fuel Log", "link_type": "DocType", "link_to": "Fuel Log", "type": "Link"},
+
+    {"label": "Fleet Management", "type": "Card Break"},
+    {"label": "Vehicle Maintenance", "link_type": "DocType", "link_to": "Vehicle Maintenance", "type": "Link"},
+    {"label": "Vehicle Insurance", "link_type": "DocType", "link_to": "Vehicle Insurance", "type": "Link"},
+    {"label": "Vehicle Document", "link_type": "DocType", "link_to": "Vehicle Document", "type": "Link"},
+    {"label": "Telematics Log", "link_type": "DocType", "link_to": "Telematics Log", "type": "Link"},
+
+    {"label": "Drivers", "type": "Card Break"},
+    {"label": "Driver", "link_type": "DocType", "link_to": "Driver", "type": "Link"},
+    {"label": "Driver License", "link_type": "DocType", "link_to": "Driver License", "type": "Link"},
+
+    {"label": "Reports", "type": "Card Break"},
+    {"label": "Fleet Utilization", "link_type": "Report", "link_to": "Fleet Utilization", "type": "Link"},
+    {"label": "Revenue by Vehicle", "link_type": "Report", "link_to": "Revenue by Vehicle", "type": "Link"},
+    {"label": "Overdue Returns", "link_type": "Report", "link_to": "Overdue Returns", "type": "Link"},
+    {"label": "Upcoming Pickups", "link_type": "Report", "link_to": "Upcoming Pickups", "type": "Link"},
+    {"label": "Maintenance Schedule", "link_type": "Report", "link_to": "Maintenance Schedule", "type": "Link"},
+
+    {"label": "Configuration", "type": "Card Break"},
+    {"label": "Rental Settings", "link_type": "DocType", "link_to": "Rental Settings", "type": "Link"}
+  ],
+  "charts": [
+    {"chart_name": "Bookings This Month"},
+    {"chart_name": "Revenue Trend"},
+    {"chart_name": "Fleet Utilization Chart"}
+  ],
+  "number_cards": [
+    {"label": "Active Rentals"},
+    {"label": "Available Vehicles"},
+    {"label": "Overdue Returns"},
+    {"label": "Revenue This Month"}
+  ]
+}

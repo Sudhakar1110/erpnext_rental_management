@@ -1,0 +1,2 @@
+# Add migration patches here
+# vehicle_rental_management.patches.v1_0.example_patch

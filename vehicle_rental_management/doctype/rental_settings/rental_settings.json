@@ -1,0 +1,34 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Settings",
+  "module": "Vehicle Rental Management",
+  "issingle": 1,
+  "fields": [
+    {"fieldname": "sec_general", "fieldtype": "Section Break", "label": "General"},
+    {"fieldname": "company_name", "fieldtype": "Data", "label": "Company Name"},
+    {"fieldname": "default_currency", "fieldtype": "Link", "options": "Currency", "default": "USD"},
+    {"fieldname": "default_location", "fieldtype": "Link", "options": "Vehicle Location"},
+    {"fieldname": "cb1", "fieldtype": "Column Break"},
+    {"fieldname": "default_tax_rate", "fieldtype": "Percent", "label": "Default Tax Rate (%)", "default": "0"},
+    {"fieldname": "rental_item_code", "fieldtype": "Link", "options": "Item", "label": "Rental Service Item"},
+    {"fieldname": "deposit_item_code", "fieldtype": "Link", "options": "Item", "label": "Deposit Item"},
+    {"fieldname": "sec_fees", "fieldtype": "Section Break", "label": "Fees & Charges"},
+    {"fieldname": "late_return_fee_per_hour", "fieldtype": "Currency", "default": "10"},
+    {"fieldname": "excess_km_rate", "fieldtype": "Currency", "label": "Excess KM Rate"},
+    {"fieldname": "cb2", "fieldtype": "Column Break"},
+    {"fieldname": "minimum_rental_hours", "fieldtype": "Int", "default": "24"},
+    {"fieldname": "booking_advance_days", "fieldtype": "Int", "label": "Max Advance Booking (days)", "default": "365"},
+    {"fieldname": "sec_portal", "fieldtype": "Section Break", "label": "Customer Portal"},
+    {"fieldname": "portal_enabled", "fieldtype": "Check", "default": "1"},
+    {"fieldname": "portal_title", "fieldtype": "Data", "default": "Rent a Vehicle"},
+    {"fieldname": "terms_and_conditions", "fieldtype": "Text Editor", "label": "Default Terms & Conditions"},
+    {"fieldname": "sec_notifications", "fieldtype": "Section Break", "label": "Notifications"},
+    {"fieldname": "send_booking_confirmation", "fieldtype": "Check", "default": "1"},
+    {"fieldname": "send_pickup_reminder", "fieldtype": "Check", "default": "1"},
+    {"fieldname": "reminder_hours_before", "fieldtype": "Int", "default": "24", "label": "Reminder Hours Before Pickup"},
+    {"fieldname": "send_overdue_alert", "fieldtype": "Check", "default": "1"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1}
+  ]
+}

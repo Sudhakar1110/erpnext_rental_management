@@ -1,0 +1,2 @@
+include requirements.txt
+recursive-include vehicle_rental_management *.json *.js *.css *.html *.py *.txt

@@ -1,0 +1,12 @@
+{
+  "doctype": "Dashboard Chart",
+  "name": "Bookings This Month",
+  "chart_name": "Bookings This Month",
+  "chart_type": "Count",
+  "document_type": "Rental Booking",
+  "based_on": "pickup_date",
+  "time_interval": "Daily",
+  "timespan": "Last Month",
+  "filters_json": "[]",
+  "module": "Vehicle Rental Management"
+}

@@ -1,0 +1,18 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle Model",
+  "module": "Vehicle Rental Management",
+  "autoname": "field:model_name",
+  "fields": [
+    {"fieldname": "model_name", "fieldtype": "Data", "label": "Model Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "make", "fieldtype": "Link", "options": "Vehicle Make", "label": "Make", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "body_type", "fieldtype": "Select", "label": "Body Type",
+     "options": "Sedan\nHatchback\nSUV\nCoupe\nConvertible\nWagon\nMinivan\nPickup Truck"},
+    {"fieldname": "doors", "fieldtype": "Int", "label": "Doors"},
+    {"fieldname": "engine_cc", "fieldtype": "Int", "label": "Engine (cc)"}
+  ],
+  "permissions": [
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Rental Agent", "read": 1}
+  ]
+}
