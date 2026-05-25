@@ -1,0 +1,22 @@
+.indicator.blue   { background-color: #4e73df; }
+.indicator.green  { background-color: #1cc88a; }
+.indicator.orange { background-color: #f6c23e; }
+.indicator.gray   { background-color: #858796; }
+.indicator.red    { background-color: #e74a3b; }
+
+[data-doctype="Rental Booking"] .form-section .section-head {
+    background-color: #f0f4ff;
+    border-left: 4px solid #4e73df;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+[data-fieldname="grand_total"] .control-value {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1cc88a;
+}
+[data-fieldname="status"] .control-value[data-value="Available"]   { color: #1cc88a; font-weight: 600; }
+[data-fieldname="status"] .control-value[data-value="Rented"]      { color: #4e73df; font-weight: 600; }
+[data-fieldname="status"] .control-value[data-value="Maintenance"] { color: #f6c23e; font-weight: 600; }
+[data-fieldname="status"] .control-value[data-value="Retired"]     { color: #858796; font-weight: 600; }
+[data-fieldname="blacklisted"] input:checked ~ label { color: #e74a3b; font-weight: 700; }

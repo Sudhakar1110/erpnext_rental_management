@@ -1,0 +1,2 @@
+# Add future migration patches here, one per line
+# e.g. rental_management.patches.v1_0.my_patch

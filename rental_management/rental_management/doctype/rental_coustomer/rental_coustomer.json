@@ -1,0 +1,40 @@
+{
+  "doctype": "DocType",
+  "name": "Rental Customer",
+  "module": "Rental Management",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "is_submittable": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:customer",
+  "title_field": "customer_name",
+  "search_fields": "customer,customer_name,mobile_no",
+  "fields": [
+    {"fieldname": "customer", "fieldtype": "Link", "label": "Customer", "options": "Customer", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "customer_name", "fieldtype": "Data", "label": "Customer Name", "fetch_from": "customer.customer_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "mobile_no", "fieldtype": "Data", "label": "Mobile No", "in_list_view": 1},
+    {"fieldname": "col_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "email_id", "fieldtype": "Data", "label": "Email ID", "options": "Email"},
+    {"fieldname": "date_of_birth", "fieldtype": "Date", "label": "Date of Birth"},
+    {"fieldname": "section_license", "fieldtype": "Section Break", "label": "Driving License"},
+    {"fieldname": "driving_license_no", "fieldtype": "Data", "label": "Driving License No"},
+    {"fieldname": "license_expiry_date", "fieldtype": "Date", "label": "License Expiry Date"},
+    {"fieldname": "col_break_2", "fieldtype": "Column Break"},
+    {"fieldname": "license_issuing_authority", "fieldtype": "Data", "label": "Issuing Authority / RTO"},
+    {"fieldname": "license_state", "fieldtype": "Data", "label": "Issuing State"},
+    {"fieldname": "section_id", "fieldtype": "Section Break", "label": "Identity Proof"},
+    {"fieldname": "id_proof_type", "fieldtype": "Select", "label": "ID Proof Type", "options": "\nAadhaar\nPassport\nVoter ID\nPAN Card"},
+    {"fieldname": "id_proof_number", "fieldtype": "Data", "label": "ID Proof Number"},
+    {"fieldname": "col_break_3", "fieldtype": "Column Break"},
+    {"fieldname": "blacklisted", "fieldtype": "Check", "label": "Blacklisted", "default": "0"},
+    {"fieldname": "blacklist_reason", "fieldtype": "Small Text", "label": "Blacklist Reason", "depends_on": "eval:doc.blacklisted == 1"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1, "print": 1, "email": 1},
+    {"role": "Rental Manager", "read": 1, "write": 1, "create": 1, "delete": 0, "report": 1, "export": 1, "print": 1, "email": 1},
+    {"role": "Rental User", "read": 1, "write": 0, "create": 0, "delete": 0, "report": 1, "print": 1}
+  ]
+}
