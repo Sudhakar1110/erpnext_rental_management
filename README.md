@@ -8,7 +8,6 @@ Feature-parity with leading rental management platforms.
 ```bash
 bench get-app https://github.com/Sudhakar1110/erpnext_rental_management.git
 bench --site <site> install-app vehicle_rental_management
-bench --site <site> install-app rental_management
 bench --site <site> migrate
 bench restart
 ```

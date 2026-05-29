@@ -31,7 +31,7 @@
       "default": "Reported", "in_list_view": 1}
   ],
   "permissions": [
-    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1, "amend": 1},
     {"role": "Rental Agent", "read": 1, "write": 1, "create": 1},
     {"role": "Mechanic", "read": 1, "write": 1}
   ]
