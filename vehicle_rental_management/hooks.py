@@ -15,7 +15,6 @@ fixtures = [
     {"dt": "Role", "filters": [["name", "in", [
         "Fleet Manager", "Rental Agent", "Mechanic", "Driver"
     ]]]},
-    {"dt": "Workflow", "filters": [["name", "in", ["Rental Booking Workflow"]]]},
     {"dt": "Notification", "filters": [["module", "=", "Vehicle Rental Management"]]},
     {"dt": "Dashboard Chart", "filters": [["module", "=", "Vehicle Rental Management"]]},
     {"dt": "Number Card", "filters": [["module", "=", "Vehicle Rental Management"]]},

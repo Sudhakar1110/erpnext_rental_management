@@ -3,6 +3,7 @@ from frappe import _
 
 def after_install():
     create_roles()
+    create_workflow()
     create_default_settings()
     create_custom_fields()
     frappe.db.commit()
@@ -10,6 +11,7 @@ def after_install():
 def after_migrate():
     """Run after each migrate to ensure any new fixtures are applied."""
     create_roles()
+    create_workflow()
     create_default_settings()
     create_custom_fields()
     frappe.db.commit()
@@ -33,6 +35,37 @@ def create_default_settings():
             "terms_and_conditions": "Standard rental terms apply."
         })
         doc.insert(ignore_permissions=True)
+
+def create_workflow():
+    """Create the Rental Booking Workflow if it doesn't exist."""
+    if not frappe.db.exists("Workflow", "Rental Booking Workflow"):
+        workflow = frappe.get_doc({
+            "doctype": "Workflow",
+            "workflow_name": "Rental Booking Workflow",
+            "document_type": "Rental Booking",
+            "is_active": 1,
+            "workflow_state_field": "status",
+            "states": [
+                {"state": "Draft", "doc_status": "0", "allow_edit": "Rental Agent"},
+                {"state": "Confirmed", "doc_status": "1", "allow_edit": "Rental Agent"},
+                {"state": "Checked Out", "doc_status": "1", "allow_edit": "Rental Agent"},
+                {"state": "Checked In", "doc_status": "1", "allow_edit": "Rental Agent"},
+                {"state": "Invoiced", "doc_status": "1", "allow_edit": "Fleet Manager"},
+                {"state": "Closed", "doc_status": "1", "allow_edit": "Fleet Manager"},
+                {"state": "Cancelled", "doc_status": "2", "allow_edit": "Fleet Manager"},
+            ],
+            "transitions": [
+                {"state": "Draft", "action": "Confirm", "next_state": "Confirmed", "allowed": "Rental Agent", "allow_self_approval": 1},
+                {"state": "Confirmed", "action": "Check Out", "next_state": "Checked Out", "allowed": "Rental Agent", "allow_self_approval": 1},
+                {"state": "Checked Out", "action": "Check In", "next_state": "Checked In", "allowed": "Rental Agent", "allow_self_approval": 1},
+                {"state": "Checked In", "action": "Invoice", "next_state": "Invoiced", "allowed": "Fleet Manager", "allow_self_approval": 1},
+                {"state": "Invoiced", "action": "Close", "next_state": "Closed", "allowed": "Fleet Manager", "allow_self_approval": 1},
+                {"state": "Confirmed", "action": "Cancel", "next_state": "Cancelled", "allowed": "Fleet Manager", "allow_self_approval": 1},
+                {"state": "Draft", "action": "Cancel", "next_state": "Cancelled", "allowed": "Fleet Manager", "allow_self_approval": 1},
+            ],
+        })
+        workflow.insert(ignore_permissions=True)
+        frappe.msgprint(_("Rental Booking Workflow created successfully"))
 
 def create_custom_fields():
     """Create custom fields on standard ERPNext DocTypes as needed."""
