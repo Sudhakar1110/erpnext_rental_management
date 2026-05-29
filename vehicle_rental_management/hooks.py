@@ -18,6 +18,8 @@ fixtures = [
     {"dt": "Custom Field", "filters": [["module", "=", "Vehicle Rental Management"]]},
     {"dt": "Workflow", "filters": [["name", "in", ["Rental Booking Workflow"]]]},
     {"dt": "Notification", "filters": [["module", "=", "Vehicle Rental Management"]]},
+    {"dt": "Dashboard Chart", "filters": [["module", "=", "Vehicle Rental Management"]]},
+    {"dt": "Number Card", "filters": [["module", "=", "Vehicle Rental Management"]]},
 ]
 
 doc_events = {
@@ -45,6 +47,8 @@ scheduler_events = {
 
 website_route_rules = [
     {"from_route": "/rental", "to_route": "rental"},
+    {"from_route": "/book-vehicle", "to_route": "book_vehicle"},
 ]
 
 after_install = "vehicle_rental_management.install.after_install"
+after_migrate = "vehicle_rental_management.install.after_migrate"

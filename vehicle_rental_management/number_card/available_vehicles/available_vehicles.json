@@ -1,0 +1,13 @@
+{
+  "doctype": "Number Card",
+  "name": "Available Vehicles",
+  "document_type": "Vehicle",
+  "function": "Count",
+  "filters_json": "[{\"fieldname\":\"status\",\"operator\":\"=\",\"value\":\"Available\"}]",
+  "aggregate_function_based_on": "",
+  "show_percentage_stats": 1,
+  "stats_time_interval": "Daily",
+  "type": "Document Type",
+  "module": "Vehicle Rental Management",
+  "label": "Available Vehicles"
+}

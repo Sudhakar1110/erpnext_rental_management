@@ -1,0 +1,13 @@
+{
+  "doctype": "Number Card",
+  "name": "Overdue Returns",
+  "document_type": "Rental Booking",
+  "function": "Count",
+  "filters_json": "[{\"fieldname\":\"status\",\"operator\":\"=\",\"value\":\"Checked Out\"},{\"fieldname\":\"return_date\",\"operator\":\"<\",\"value\":\"Today\"}]",
+  "aggregate_function_based_on": "",
+  "show_percentage_stats": 1,
+  "stats_time_interval": "Daily",
+  "type": "Document Type",
+  "module": "Vehicle Rental Management",
+  "label": "Overdue Returns"
+}

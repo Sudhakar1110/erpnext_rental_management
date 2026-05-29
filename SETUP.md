@@ -1,76 +1,60 @@
 # Vehicle Rental Management — ERPNext v15+ App
 
 A complete Vehicle / Fleet Rental Management application for **ERPNext v15+** built on the
-**Frappe Framework**. Inspired by Rentsyst (rentsyst.com) and Coastr (coastr.com).
+**Frappe Framework v15+**.
 
-## 🚗 Feature Mapping vs Rentsyst & Coastr
+## Requirements
 
-| Feature Area                  | Rentsyst | Coastr | This App (ERPNext v15)            |
-|-------------------------------|----------|--------|-----------------------------------|
-| Fleet / Vehicle Master        | ✅       | ✅     | `Vehicle` DocType                 |
-| Online Booking Engine         | ✅       | ✅     | Web Form `/book-vehicle`          |
-| Rental Agreements / Contracts | ✅       | ✅     | `Rental Agreement`                |
-| Dynamic Pricing / Seasons     | ✅       | ✅     | `Rental Pricing Plan` + tiers     |
-| Extras / Add-ons              | ✅       | ✅     | `Rental Extra`                    |
-| Damage / Inspection           | ✅       | ✅     | `Vehicle Inspection`, `Vehicle Damage` |
-| Maintenance & Service         | ✅       | ✅     | `Vehicle Maintenance`             |
-| Insurance Tracking            | ✅       | ✅     | `Vehicle Insurance`               |
-| Driver / KYC Management       | ✅       | ✅     | `Driver`, `Driver License`        |
-| Telematics / GPS              | ✅       | ✅     | `Telematics Log` (API ready)      |
-| Fuel Logging                  | ✅       | ✅     | `Fuel Log`                        |
-| Payments / Invoicing          | ✅       | ✅     | Integrated `Sales Invoice`        |
-| Multi-location                | ✅       | ✅     | `Vehicle Location`                |
-| Reports & Dashboards          | ✅       | ✅     | 5 Reports + Workspace charts      |
-| Customer Portal               | ✅       | ✅     | `/rental` portal                  |
-| Notifications (Email/SMS)     | ✅       | ✅     | Frappe `Notification` docs        |
+- Frappe Framework v15+
+- ERPNext v15+
+- Python 3.10+
+- Node.js 18+
+- Redis, MariaDB
 
-## 📦 Installation
+## Installation
 
 ```bash
-# 1. Ensure ERPNext v15+ bench is running
-bench --version          # Frappe v15+
-bench list-apps
-
-# 2. Get the app
+# 1. Get the app on your bench
 cd ~/frappe-bench
-bench get-app https://github.com/<your-org>/vehicle_rental_management.git
+bench get-app https://github.com/Sudhakar1110/erpnext_rental_management.git
 
-# 3. Install on site
+# 2. Install on your site
 bench --site <your-site> install-app vehicle_rental_management
+bench --site <your-site> install-app rental_management
 
-# 4. Migrate & restart
+# 3. Migrate & restart
 bench --site <your-site> migrate
 bench restart
 ```
 
-## 🧱 DocTypes Created
+## DocTypes Created
 
 ### Masters
-- `Vehicle Category` – Economy, SUV, Luxury, Van …
-- `Vehicle Make` – Toyota, BMW, Ford …
-- `Vehicle Model` – linked to Make
-- `Vehicle Location` – branches / pickup points
-- `Rental Extra` – GPS, Child Seat, Insurance Top-up …
+- `Vehicle Category` — Economy, SUV, Luxury, Van ...
+- `Vehicle Make` — Toyota, BMW, Ford ...
+- `Vehicle Model` — linked to Make
+- `Vehicle Location` — branches / pickup points
+- `Rental Extra` — GPS, Child Seat, Insurance Top-up ...
 - `Rental Pricing Plan` (with child `Rental Pricing Tier`)
 - `Driver` / `Driver License`
 
 ### Operational
-- `Vehicle` – main fleet record
-- `Rental Booking` – reservations
-- `Rental Agreement` – signed contract
-- `Vehicle Inspection` – pre/post checkout
-- `Vehicle Damage`
-- `Vehicle Maintenance`
-- `Vehicle Insurance`
-- `Vehicle Document` (registration, permits)
-- `Fuel Log`
-- `Telematics Log`
-- `Rental Invoice` (wraps Sales Invoice)
+- `Vehicle` — main fleet record
+- `Rental Booking` — reservations (submittable, with workflow)
+- `Rental Agreement` — signed contract
+- `Vehicle Inspection` — pre/post checkout
+- `Vehicle Damage` — incident tracking
+- `Vehicle Maintenance` — service scheduling & tracking
+- `Vehicle Insurance` — policy management
+- `Vehicle Document` — registration, permits
+- `Fuel Log` — refueling records
+- `Telematics Log` — GPS/telemetry data
+- `Rental Invoice` — billing wrapper
 
 ### Settings
 - `Rental Settings` (Single DocType)
 
-## 🔄 Workflow: Rental Booking
+## Workflow: Rental Booking
 
 ```
 Draft → Confirmed → Checked Out → Checked In → Invoiced → Closed
@@ -79,55 +63,69 @@ Draft → Confirmed → Checked Out → Checked In → Invoiced → Closed
 
 Defined in `fixtures/workflow.json`.
 
-## 📊 Reports (Script Reports)
-- **Fleet Utilization** – % days rented per vehicle
-- **Revenue by Vehicle**
-- **Overdue Returns**
-- **Upcoming Pickups**
-- **Maintenance Schedule**
+## Reports (Script Reports)
 
-## 🔔 Notifications
+- **Fleet Utilization** — % days rented per vehicle
+- **Revenue by Vehicle** — earnings breakdown per vehicle
+- **Overdue Returns** — late bookings with estimated fees
+- **Upcoming Pickups** — next 7/14/30 days schedule
+- **Maintenance Schedule** — upcoming service tasks
 
-| Trigger                    | Channel      | Recipient               |
-|----------------------------|--------------|-------------------------|
-| Booking Confirmed          | Email        | Customer                |
-| Pickup Reminder (24h)      | Email + SMS  | Customer                |
-| Return Overdue             | Email        | Customer + Manager      |
-| Insurance Expiry (30 days) | Email        | Fleet Manager           |
-| License Expiry (30 days)   | Email        | Driver                  |
-| Maintenance Due            | Email        | Fleet Manager           |
+## Notifications
 
-## 🌐 Customer Portal
-- `/rental` – browse vehicles
-- `/book-vehicle` – booking web form
-- `/me` – customer dashboard (Frappe built-in)
+| Trigger                 | Channel  | Recipient         |
+|-------------------------|----------|-------------------|
+| Booking Confirmed       | Email    | Customer          |
+| Pickup Reminder (24h)   | Email    | Customer          |
+| Return Overdue          | Email    | Customer + Manager|
+| Insurance Expiry (30d)  | Email    | Fleet Manager     |
+| Registration Expiry(30d)| Email    | Fleet Manager     |
+| Maintenance Due (3d)    | Email    | Fleet Manager     |
 
-## 🔐 Roles
-- Fleet Manager
-- Rental Agent
-- Mechanic
-- Driver
-- Customer (standard portal role)
+## Customer Portal
 
-## 🔌 Integrations Ready
-- Payment Gateway (ERPNext Payment Gateway)
-- Telematics webhook: `/api/method/vehicle_rental_management.api.telematics.ingest`
-- Stripe / Razorpay / PayPal via ERPNext
+- `/rental` — browse available vehicles
+- `/book-vehicle?vehicle=<name>` — booking web form
+- `/me` — customer dashboard (Frappe built-in)
 
-## ✅ Post-Install Checklist
-1. Set up **Rental Settings** (default location, tax, terms).
-2. Create **Vehicle Categories** and **Pricing Plans**.
-3. Add **Vehicles** with photos.
-4. Configure **Notifications** in Setup.
-5. Publish web form `/book-vehicle`.
+## Roles & Permissions
 
-## 🧭 Push to Git
+- **Fleet Manager** — Full access to all fleet operations
+- **Rental Agent** — Daily rental operations, create bookings
+- **Mechanic** — Maintenance and inspection access
+- **Driver** — Limited view access for assigned drivers
+- **Customer** — Portal access (standard Frappe role)
+
+## Integrations
+
+- **Telematics API**: POST `/api/method/vehicle_rental_management.api.telematics.ingest`
+- **Payment Gateway**: ERPNext built-in payment integrations (Stripe, Razorpay, PayPal)
+- **Web Booking API**: `create_web_booking` whitelisted method for external portals
+
+## Post-Install Checklist
+
+1. Go to **Rental Settings** and configure:
+   - Default tax rate, currency, location
+   - Rental service item code (create via Item master)
+   - Late return fee, excess KM rates
+   - Terms & conditions for agreements
+2. Create **Vehicle Categories** (e.g., Economy, SUV, Luxury)
+3. Create **Vehicle Makes** (e.g., Toyota, BMW, Ford)
+4. Create **Vehicle Models** linked to Makes
+5. Create **Vehicle Locations** (pickup/return points)
+6. Create **Rental Pricing Plans** with tiers for seasonal pricing
+7. Add **Vehicles** with photos, rates, and specifications
+8. Configure **Notifications** (already seeded as fixtures)
+9. Publish the customer portal at `/rental` (already routed in hooks.py)
+10. Set up **Telematics** webhook if using GPS tracking
+
+## Development
 
 ```bash
-git init
-git add .
-git commit -m "feat: initial ERPNext v15 Vehicle Rental Management app"
-git branch -M main
-git remote add origin https://github.com/<your-org>/vehicle_rental_management.git
-git push -u origin main
+# Watch assets during development
+bench watch
 ```
+
+## License
+
+MIT

@@ -1,0 +1,14 @@
+{
+  "doctype": "Dashboard Chart",
+  "name": "Fleet Utilization Chart",
+  "chart_name": "Fleet Utilization Chart",
+  "chart_type": "Count",
+  "document_type": "Rental Booking",
+  "based_on": "pickup_date",
+  "group_by_type": "Count",
+  "time_interval": "Weekly",
+  "timespan": "Last Quarter",
+  "filters_json": "[{\"fieldname\":\"status\",\"operator\":\"in\",\"value\":\"Checked Out,Checked In,Invoiced,Closed\"}]",
+  "type": "Document Type",
+  "module": "Vehicle Rental Management"
+}
