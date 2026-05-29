@@ -5,7 +5,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="vehicle_rental_management",
-    version="1.0.0",
+    version="1.1.0",
     description="Vehicle Rental Management for ERPNext v15+",
     author="Your Company",
     author_email="dev@example.com",

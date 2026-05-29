@@ -11,5 +11,6 @@
   "recipients": [
     {"role": "Fleet Manager"}
   ],
-  "message": "<p>Registration for vehicle <strong>{{ doc.license_plate }}</strong> expires on <strong>{{ doc.registration_expiry }}</strong>. Please renew before expiry.</p>"
+  "message": "<p>Registration for vehicle <strong>{{ doc.license_plate }}</strong> expires on <strong>{{ doc.registration_expiry }}</strong>. Please renew before expiry.</p>",
+  "module": "Vehicle Rental Management"
 }

@@ -11,5 +11,6 @@
   "recipients": [
     {"receiver_by_document_field": "customer"}
   ],
-  "message": "<p>Dear Customer,</p><p>Your booking <strong>{{ doc.name }}</strong> has been confirmed.</p><p><strong>Vehicle:</strong> {{ doc.vehicle }}<br><strong>Pickup:</strong> {{ doc.pickup_date }} at {{ doc.pickup_location }}<br><strong>Return:</strong> {{ doc.return_date }} at {{ doc.return_location }}<br><strong>Total:</strong> {{ doc.grand_total }}</p><p>Thank you for choosing us.</p>"
+  "message": "<p>Dear Customer,</p><p>Your booking <strong>{{ doc.name }}</strong> has been confirmed.</p><p><strong>Vehicle:</strong> {{ doc.vehicle }}<br><strong>Pickup:</strong> {{ doc.pickup_date }} at {{ doc.pickup_location }}<br><strong>Return:</strong> {{ doc.return_date }} at {{ doc.return_location }}<br><strong>Total:</strong> {{ doc.grand_total }}</p><p>Thank you for choosing us.</p>",
+  "module": "Vehicle Rental Management"
 }

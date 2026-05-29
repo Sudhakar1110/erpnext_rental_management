@@ -13,5 +13,6 @@
     {"role": "Fleet Manager"},
     {"role": "Mechanic"}
   ],
-  "message": "<p>Maintenance is scheduled for vehicle <strong>{{ doc.vehicle }}</strong> on <strong>{{ doc.scheduled_date }}</strong>.</p><p><strong>Type:</strong> {{ doc.maintenance_type }}<br><strong>Workshop:</strong> {{ doc.workshop }}</p>"
+  "message": "<p>Maintenance is scheduled for vehicle <strong>{{ doc.vehicle }}</strong> on <strong>{{ doc.scheduled_date }}</strong>.</p><p><strong>Type:</strong> {{ doc.maintenance_type }}<br><strong>Workshop:</strong> {{ doc.workshop }}</p>",
+  "module": "Vehicle Rental Management"
 }

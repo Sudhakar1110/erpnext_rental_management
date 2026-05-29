@@ -11,6 +11,7 @@ def after_migrate():
     """Run after each migrate to ensure any new fixtures are applied."""
     create_roles()
     create_default_settings()
+    create_custom_fields()
     frappe.db.commit()
 
 def create_roles():

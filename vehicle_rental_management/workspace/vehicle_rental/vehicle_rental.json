@@ -57,9 +57,9 @@
     {"chart_name": "Fleet Utilization Chart"}
   ],
   "number_cards": [
-    {"label": "Active Rentals"},
-    {"label": "Available Vehicles"},
-    {"label": "Overdue Returns"},
-    {"label": "Revenue This Month"}
+    {"number_card_name": "Active Rentals", "label": "Active Rentals"},
+    {"number_card_name": "Available Vehicles", "label": "Available Vehicles"},
+    {"number_card_name": "Overdue Returns", "label": "Overdue Returns"},
+    {"number_card_name": "Revenue This Month", "label": "Revenue This Month"}
   ]
 }

@@ -13,5 +13,6 @@
     {"receiver_by_document_field": "customer"}
   ],
   "send_to_all_assignees": 0,
-  "message": "<p>Dear Customer,</p><p>Your rental of vehicle <strong>{{ doc.vehicle }}</strong> was due for return on <strong>{{ doc.return_date }}</strong>.</p><p>Please return the vehicle immediately to avoid additional late fees.</p><p>Contact us urgently if you need an extension.</p>"
+  "message": "<p>Dear Customer,</p><p>Your rental of vehicle <strong>{{ doc.vehicle }}</strong> was due for return on <strong>{{ doc.return_date }}</strong>.</p><p>Please return the vehicle immediately to avoid additional late fees.</p><p>Contact us urgently if you need an extension.</p>",
+  "module": "Vehicle Rental Management"
 }
