@@ -9,7 +9,7 @@ setup(
     description="Vehicle Rental Management for ERPNext v15+",
     author="Your Company",
     author_email="dev@example.com",
-    packages=find_packages(),
+    packages=find_packages(exclude=["rental_management", "rental_management.*"]),
     zip_safe=False,
     include_package_data=True,
     install_requires=install_requires

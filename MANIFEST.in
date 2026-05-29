@@ -1,2 +1,8 @@
 include requirements.txt
-recursive-include vehicle_rental_management *.json *.js *.css *.html *.py *.txt
+recursive-include vehicle_rental_management *.json *.js *.css *.html *.py *.png *.jpg *.svg
+recursive-include rental_management *.json *.js *.css *.html *.py *.png *.jpg *.svg
+include public/css/*.css
+include public/js/*.js
+recursive-include templates *.html *.py
+recursive-include www *.*
+recursive-include fixtures *
